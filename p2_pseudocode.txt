@@ -1,0 +1,56 @@
+analyze_scores:
+main)
+1) Define variables:
+    Arrays to store wins, totals, and top teams for each year
+    Variables to store years and file names
+2) Check if the user provided enough command-line arguments
+3) If not, print usage instructions and exit
+4) Loop through each input file:
+    Load data from the file into a 2D array
+5) Calculate the number of wins and total points for each team
+6) Determine the top team/s for the year
+7) Print the top team/s for the year to the terminal
+8) After processing all files, write the results to the output file:
+    Print the number of wins and total points for each team per year
+
+analysis_functions.h:
+1) Include function prototypes for:
+    load_data
+    findTotals
+    findWins
+    findTop
+
+analysis_functions.c:
+load_data)
+1) Define variables
+2) Open the input file
+3) Read the year from the first line of the file
+4) Read the game data (away team, home team, away score, home score) into a 2D array
+5) Close the file
+6) Return the year
+
+findTotals)
+1)Define variables
+2)Initialize the totals array to zero
+3)Loop through the game data:
+    Add the away team's score to their total
+    Add the home team's score to their total
+    Store the totals in the provided array
+
+findWins)
+1) Define variables
+2) Initialize the wins array to zero
+3) Loop through the game data:
+    If the away team's score is higher, increment their wins
+    If the home team's score is higher, increment their wins
+    If it's a tie, increment both teams' wins
+    Store the wins in the provided array
+
+findTop)
+1) Define variables
+2) Find the maximum number of wins in the wins array
+3) Mark all teams with the maximum number of wins as top teams
+4) If there is a tie:
+    Find the team/s with the highest total points among the tied teams
+    Mark them as the top team/s
+    Return a flag indicating if there was a tie
